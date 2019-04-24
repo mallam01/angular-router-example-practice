@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+		<div class="panel panel-primary" *ngFor="let member of roomMembers">
+			<div class="panel-heading">
+				<h3 class="panel-title"> {{ member.name }} </h3>
+			</div>
+			<div class="panel-body"> {{ member.address }}
+				<span class="badge" style="font-weight: 400; cursor: pointer" [routerLink]="['/room/edit', member.id]" [queryParams]="{allowEdit: member.id == 2 ? '1' : '0'}"
+        [fragment]="'loading'">edit</span> </div>
+		</div>
+	</div>
+  <div class="row">
+	<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+  <router-outlet></router-outlet>
+  	</div>
+	</div>
+</div>
